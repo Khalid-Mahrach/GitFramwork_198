@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
+import pageObjects.LandingPage;
 import resources.base;
 
 public class HomePage extends base {
@@ -13,10 +14,12 @@ public class HomePage extends base {
 	// public static Logger log =LogManager.getLogger(base.class.getName());
 
 	@Test
-	public void initialize() throws IOException {
+	public void basePageNavigation() throws IOException {
 
 		driver = initializeDriver();
-		driver.get("https://sso.teachable.com/secure/9521/users/sign_in");
+		driver.get("http://www.qaclickacademy.com/");
+		LandingPage l = new LandingPage(driver);
+		l.getLogin().click();
 
 	}
 
